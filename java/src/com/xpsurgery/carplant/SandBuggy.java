@@ -1,6 +1,6 @@
 package com.xpsurgery.carplant;
 
-public class SandBuggy extends FourWheelDriveCar {
+class SandBuggy extends FourWheelDriveCar {
 
 	@Override
 	public String name() {

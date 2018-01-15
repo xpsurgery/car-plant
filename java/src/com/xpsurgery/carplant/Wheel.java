@@ -1,22 +1,22 @@
 package com.xpsurgery.carplant;
 
-public class Wheel {
+class Wheel {
 
 	private String name;
 
-	public Wheel(String name) {
+	Wheel(String name) {
 		this.name = name;
 	}
 
-	public void turnLeft(int degrees) {
+	void turnLeft(int degrees) {
 		CarPlant.LOG += name + " turning left " + degrees + " degrees\n";
 	}
 
-	public void turnRight(int degrees) {
+	void turnRight(int degrees) {
 		CarPlant.LOG += name + " turning right " + degrees + " degrees\n";
 	}
 
-	public void rotate(int kph) {
+	void rotate(int kph) {
 		CarPlant.LOG += name + " accelerating " + kph + " kph\n";
 	}
 
