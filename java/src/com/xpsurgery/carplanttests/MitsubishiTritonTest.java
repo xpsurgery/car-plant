@@ -1,6 +1,10 @@
+package com.xpsurgery.carplanttests;
+
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+import com.xpsurgery.carplant.CarPlant;
+import com.xpsurgery.carplant.Car;
 
 public class MitsubishiTritonTest {
 
@@ -44,3 +48,4 @@ public class MitsubishiTritonTest {
 	}
 
 }
+

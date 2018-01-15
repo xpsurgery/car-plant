@@ -1,3 +1,5 @@
+package com.xpsurgery.carplant;
+
 public class CarPlant {
 	public static String LOG;
 
@@ -21,3 +23,4 @@ public class CarPlant {
 		return new SandBuggyLite();
 	}
 }
+

@@ -1,4 +1,6 @@
-abstract class Car {
+package com.xpsurgery.carplant;
+
+public abstract class Car {
 
 	public Wheel _frontLeft;
 	public Wheel _frontRight;
@@ -25,3 +27,4 @@ abstract class Car {
 		_frontRight.turnRight(degrees);
 	}
 }
+

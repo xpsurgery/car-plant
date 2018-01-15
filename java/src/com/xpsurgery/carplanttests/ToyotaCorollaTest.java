@@ -1,7 +1,10 @@
-import static org.junit.Assert.*;
+package com.xpsurgery.carplanttests;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+import com.xpsurgery.carplant.CarPlant;
+import com.xpsurgery.carplant.Car;
 
 public class ToyotaCorollaTest {
 
@@ -43,3 +46,4 @@ public class ToyotaCorollaTest {
 	}
 
 }
+

@@ -1,3 +1,5 @@
+package com.xpsurgery.carplant;
+
 public class SandBuggyLite extends RearWheelDriveCar {
 
 	@Override
@@ -6,3 +8,4 @@ public class SandBuggyLite extends RearWheelDriveCar {
 	}
 
 }
+

@@ -1,3 +1,5 @@
+package com.xpsurgery.carplanttests;
+
 import java.util.Random;
 
 public class TestHelpers {
@@ -12,3 +14,4 @@ public class TestHelpers {
 	}
 
 }
+

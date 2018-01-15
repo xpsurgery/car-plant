@@ -1,3 +1,5 @@
+package com.xpsurgery.carplant;
+
 abstract class FourWheelDriveCar extends Car {
 	public void accelerate(int kph) {
 		_frontLeft.rotate(kph);
@@ -6,3 +8,4 @@ abstract class FourWheelDriveCar extends Car {
 		_rearRight.rotate(kph);
 	}
 }
+

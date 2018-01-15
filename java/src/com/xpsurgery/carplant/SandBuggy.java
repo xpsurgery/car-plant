@@ -1,3 +1,4 @@
+package com.xpsurgery.carplant;
 
 public class SandBuggy extends FourWheelDriveCar {
 
@@ -6,3 +7,4 @@ public class SandBuggy extends FourWheelDriveCar {
 		return "Sand Buggy";
 	}
 }
+

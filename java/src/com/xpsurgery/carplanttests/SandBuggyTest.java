@@ -1,22 +1,24 @@
-import static org.junit.Assert.assertEquals;
+package com.xpsurgery.carplanttests;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+import com.xpsurgery.carplant.CarPlant;
+import com.xpsurgery.carplant.Car;
 
-
-public class SandBuggyLiteTest {
+public class SandBuggyTest {
 
 	private Car buggy;
 
 	@Before
 	public void setUp() throws Exception {
 		CarPlant.LOG = "";
-		buggy = CarPlant.makeSandBuggyLite();
+		buggy = CarPlant.makeSandBuggy();
 	}
 
 	@Test
 	public void hasTheCorrectName() {
-		assertEquals("Sand Buggy Lite", buggy.name());
+		assertEquals("Sand Buggy", buggy.name());
 	}
 
 	@Test
@@ -40,10 +42,12 @@ public class SandBuggyLiteTest {
 	}
 
 	@Test
-	public void acceleratingTurnsOnlyTheRearWheels() {
+	public void acceleratingTurnsAllWheels() {
 		int speed = TestHelpers.randomSpeed();
 		buggy.accelerate(speed);
-		assertEquals("rear left accelerating " + speed + " kph\n"
+		assertEquals("front left accelerating " + speed + " kph\n"
+				   + "front right accelerating " + speed + " kph\n"
+				   + "rear left accelerating " + speed + " kph\n"
 				   + "rear right accelerating " + speed + " kph\n", CarPlant.LOG);
 	}
 
