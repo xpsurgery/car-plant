@@ -12,7 +12,7 @@ CLASSPATH := -classpath src:junit-4.12.jar:hamcrest-core-1.3.jar
 .PHONY: test run clean clobber
 
 test: $(SOURCES:.java=.class)
-	$(JAVA) -cp src:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore com.xpsurgery.carplanttests.CarPlantTests
+	$(JAVA) $(CLASSPATH) org.junit.runner.JUnitCore com.xpsurgery.carplanttests.CarPlantTests
 
 clean:
 	$(RM) **/*.class
