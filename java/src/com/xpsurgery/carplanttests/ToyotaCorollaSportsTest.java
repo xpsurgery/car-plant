@@ -3,17 +3,19 @@ package com.xpsurgery.carplanttests;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+import java.io.StringWriter;
 import com.xpsurgery.carplant.CarPlant;
 import com.xpsurgery.carplant.Car;
 
 public class ToyotaCorollaSportsTest {
 
 	private Car corolla;
+  private StringWriter log;
 
 	@Before
 	public void setUp() throws Exception {
-		CarPlant.LOG = "";
-		corolla = CarPlant.makeToyotaCorollaSports();
+    log = new StringWriter();
+		corolla = CarPlant.makeToyotaCorollaSports(log);
 	}
 
 	@Test
@@ -26,7 +28,7 @@ public class ToyotaCorollaSportsTest {
 		int degrees = TestHelpers.randomDegrees();
 		corolla.turnLeft(degrees);
 		assertEquals("front left turning left " + degrees + " degrees\n"
-				   + "front right turning left " + degrees + " degrees\n", CarPlant.LOG);
+				   + "front right turning left " + degrees + " degrees\n", log.toString());
 	}
 
 	@Test
@@ -34,7 +36,7 @@ public class ToyotaCorollaSportsTest {
 		int degrees = TestHelpers.randomDegrees();
 		corolla.turnRight(degrees);
 		assertEquals("front left turning right " + degrees + " degrees\n"
-				   + "front right turning right " + degrees + " degrees\n", CarPlant.LOG);
+				   + "front right turning right " + degrees + " degrees\n", log.toString());
 	}
 
 	@Test
@@ -42,7 +44,7 @@ public class ToyotaCorollaSportsTest {
 		int speed = TestHelpers.randomSpeed();
 		corolla.accelerate(speed);
 		assertEquals("rear left accelerating " + speed + " kph\n"
-				   + "rear right accelerating " + speed + " kph\n", CarPlant.LOG);
+				   + "rear right accelerating " + speed + " kph\n", log.toString());
 	}
 
 }

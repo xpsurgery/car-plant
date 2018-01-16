@@ -3,17 +3,19 @@ package com.xpsurgery.carplanttests;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+import java.io.StringWriter;
 import com.xpsurgery.carplant.CarPlant;
 import com.xpsurgery.carplant.Car;
 
 public class SandBuggyLiteTest {
 
 	private Car buggy;
+  private StringWriter log;
 
 	@Before
 	public void setUp() throws Exception {
-		CarPlant.LOG = "";
-		buggy = CarPlant.makeSandBuggyLite();
+    log = new StringWriter();
+		buggy = CarPlant.makeSandBuggyLite(log);
 	}
 
 	@Test
@@ -28,7 +30,7 @@ public class SandBuggyLiteTest {
 		assertEquals("front left turning left " + degrees + " degrees\n"
 				   + "front right turning left " + degrees + " degrees\n"
 				   + "rear left turning right " + degrees + " degrees\n"
-				   + "rear right turning right " + degrees + " degrees\n", CarPlant.LOG);
+				   + "rear right turning right " + degrees + " degrees\n", log.toString());
 	}
 
 	@Test
@@ -38,7 +40,7 @@ public class SandBuggyLiteTest {
 		assertEquals("front left turning right " + degrees + " degrees\n"
 				   + "front right turning right " + degrees + " degrees\n"
 				   + "rear left turning left " + degrees + " degrees\n"
-				   + "rear right turning left " + degrees + " degrees\n", CarPlant.LOG);
+				   + "rear right turning left " + degrees + " degrees\n", log.toString());
 	}
 
 	@Test
@@ -46,7 +48,7 @@ public class SandBuggyLiteTest {
 		int speed = TestHelpers.randomSpeed();
 		buggy.accelerate(speed);
 		assertEquals("rear left accelerating " + speed + " kph\n"
-				   + "rear right accelerating " + speed + " kph\n", CarPlant.LOG);
+				   + "rear right accelerating " + speed + " kph\n", log.toString());
 	}
 
 }
