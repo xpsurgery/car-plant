@@ -17,7 +17,7 @@ class SandBuggyLiteTest(unittest.TestCase):
         self.assertEquals("front left turning left " + str(degrees) + " degrees\n"
                    + "front right turning left " + str(degrees) + " degrees\n"
                    + "rear left turning right " + str(degrees) + " degrees\n"
-                   + "rear right turning right " + str(degrees) + " degrees\n", 'xxx'.join(CarPlant.log))
+                   + "rear right turning right " + str(degrees) + " degrees\n", ''.join(CarPlant.log))
 
     def testTurningRightTurnsAllWheels(self):
         degrees = TestHelpers.randomDegrees()
